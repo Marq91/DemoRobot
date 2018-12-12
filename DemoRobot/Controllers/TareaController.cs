@@ -55,7 +55,6 @@ namespace DemoRobot.Controllers
         public ActionResult Create()
         {
             //Llamar lista de id para realizar el enlace de tarea y robot
-
             //var sCombo = db.robot.Join(db.tarea, rob => rob.id_robot, hor => hor.id_robot, (rob, hor) => new { rob, hor }).ToList();
 
             var sCombo = db.robot
