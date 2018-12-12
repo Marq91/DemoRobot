@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2e793eee979047c986f6f568964491f9" Name="Diagram1">
+        <EntityTypeShape EntityType="DemoRobotModel.horario" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoRobotModel.robot" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoRobotModel.servidor" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoRobotModel.sistema_operacional" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoRobotModel.sys_robot" Width="1.5" PointX="5.375" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoRobotModel.tarea" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <AssociationConnector Association="DemoRobotModel.FK_horario_tarea" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoRobotModel.FK_id_robot" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoRobotModel.sys_robot_robot_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoRobotModel.task_robot_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoRobotModel.FK_id_system" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoRobotModel.sys_robot_operational_system_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoRobotModel.FK_sys_robot_sys_robot" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoRobotModel.robot_server" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

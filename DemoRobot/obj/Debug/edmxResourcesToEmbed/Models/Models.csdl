@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DemoRobotModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="horario">
+    <Key>
+      <PropertyRef Name="idhorario" />
+    </Key>
+    <Property Name="idhorario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="l1" Type="Boolean" />
+    <Property Name="l2" Type="Boolean" />
+    <Property Name="l3" Type="Boolean" />
+    <Property Name="l4" Type="Boolean" />
+    <Property Name="l5" Type="Boolean" />
+    <Property Name="l6" Type="Boolean" />
+    <Property Name="l7" Type="Boolean" />
+    <Property Name="l8" Type="Boolean" />
+    <Property Name="l9" Type="Boolean" />
+    <Property Name="l10" Type="Boolean" />
+    <Property Name="l11" Type="Boolean" />
+    <Property Name="l12" Type="Boolean" />
+    <Property Name="l13" Type="Boolean" />
+    <Property Name="l14" Type="Boolean" />
+    <Property Name="l15" Type="Boolean" />
+    <Property Name="l16" Type="Boolean" />
+    <Property Name="l17" Type="Boolean" />
+    <Property Name="l18" Type="Boolean" />
+    <Property Name="l19" Type="Boolean" />
+    <Property Name="l20" Type="Boolean" />
+    <Property Name="l21" Type="Boolean" />
+    <Property Name="l22" Type="Boolean" />
+    <Property Name="l23" Type="Boolean" />
+    <Property Name="l24" Type="Boolean" />
+    <Property Name="ma1" Type="Boolean" />
+    <Property Name="ma2" Type="Boolean" />
+    <Property Name="ma3" Type="Boolean" />
+    <Property Name="ma4" Type="Boolean" />
+    <Property Name="ma5" Type="Boolean" />
+    <Property Name="ma6" Type="Boolean" />
+    <Property Name="ma7" Type="Boolean" />
+    <Property Name="ma8" Type="Boolean" />
+    <Property Name="ma9" Type="Boolean" />
+    <Property Name="ma10" Type="Boolean" />
+    <Property Name="ma11" Type="Boolean" />
+    <Property Name="ma12" Type="Boolean" />
+    <Property Name="ma13" Type="Boolean" />
+    <Property Name="ma14" Type="Boolean" />
+    <Property Name="ma15" Type="Boolean" />
+    <Property Name="ma16" Type="Boolean" />
+    <Property Name="ma17" Type="Boolean" />
+    <Property Name="ma18" Type="Boolean" />
+    <Property Name="ma19" Type="Boolean" />
+    <Property Name="ma20" Type="Boolean" />
+    <Property Name="ma21" Type="Boolean" />
+    <Property Name="ma22" Type="Boolean" />
+    <Property Name="ma23" Type="Boolean" />
+    <Property Name="ma24" Type="Boolean" />
+    <Property Name="mi1" Type="Boolean" />
+    <Property Name="mi2" Type="Boolean" />
+    <Property Name="mi3" Type="Boolean" />
+    <Property Name="mi4" Type="Boolean" />
+    <Property Name="mi5" Type="Boolean" />
+    <Property Name="mi6" Type="Boolean" />
+    <Property Name="mi7" Type="Boolean" />
+    <Property Name="mi8" Type="Boolean" />
+    <Property Name="mi9" Type="Boolean" />
+    <Property Name="mi10" Type="Boolean" />
+    <Property Name="mi11" Type="Boolean" />
+    <Property Name="mi12" Type="Boolean" />
+    <Property Name="mi13" Type="Boolean" />
+    <Property Name="mi14" Type="Boolean" />
+    <Property Name="mi15" Type="Boolean" />
+    <Property Name="mi16" Type="Boolean" />
+    <Property Name="mi17" Type="Boolean" />
+    <Property Name="mi18" Type="Boolean" />
+    <Property Name="mi19" Type="Boolean" />
+    <Property Name="mi20" Type="Boolean" />
+    <Property Name="mi21" Type="Boolean" />
+    <Property Name="mi22" Type="Boolean" />
+    <Property Name="mi23" Type="Boolean" />
+    <Property Name="mi24" Type="Boolean" />
+    <Property Name="j1" Type="Boolean" />
+    <Property Name="j2" Type="Boolean" />
+    <Property Name="j3" Type="Boolean" />
+    <Property Name="j4" Type="Boolean" />
+    <Property Name="j5" Type="Boolean" />
+    <Property Name="j6" Type="Boolean" />
+    <Property Name="j7" Type="Boolean" />
+    <Property Name="j8" Type="Boolean" />
+    <Property Name="j9" Type="Boolean" />
+    <Property Name="j10" Type="Boolean" />
+    <Property Name="j11" Type="Boolean" />
+    <Property Name="j12" Type="Boolean" />
+    <Property Name="j13" Type="Boolean" />
+    <Property Name="j14" Type="Boolean" />
+    <Property Name="j15" Type="Boolean" />
+    <Property Name="j16" Type="Boolean" />
+    <Property Name="j17" Type="Boolean" />
+    <Property Name="j18" Type="Boolean" />
+    <Property Name="j19" Type="Boolean" />
+    <Property Name="j20" Type="Boolean" />
+    <Property Name="j21" Type="Boolean" />
+    <Property Name="j22" Type="Boolean" />
+    <Property Name="j23" Type="Boolean" />
+    <Property Name="j24" Type="Boolean" />
+    <Property Name="v1" Type="Boolean" />
+    <Property Name="v2" Type="Boolean" />
+    <Property Name="v3" Type="Boolean" />
+    <Property Name="v4" Type="Boolean" />
+    <Property Name="v5" Type="Boolean" />
+    <Property Name="v6" Type="Boolean" />
+    <Property Name="v7" Type="Boolean" />
+    <Property Name="v8" Type="Boolean" />
+    <Property Name="v9" Type="Boolean" />
+    <Property Name="v10" Type="Boolean" />
+    <Property Name="v11" Type="Boolean" />
+    <Property Name="v12" Type="Boolean" />
+    <Property Name="v13" Type="Boolean" />
+    <Property Name="v14" Type="Boolean" />
+    <Property Name="v15" Type="Boolean" />
+    <Property Name="v16" Type="Boolean" />
+    <Property Name="v17" Type="Boolean" />
+    <Property Name="v18" Type="Boolean" />
+    <Property Name="v19" Type="Boolean" />
+    <Property Name="v20" Type="Boolean" />
+    <Property Name="v21" Type="Boolean" />
+    <Property Name="v22" Type="Boolean" />
+    <Property Name="v23" Type="Boolean" />
+    <Property Name="v24" Type="Boolean" />
+    <Property Name="s1" Type="Boolean" />
+    <Property Name="s2" Type="Boolean" />
+    <Property Name="s3" Type="Boolean" />
+    <Property Name="s4" Type="Boolean" />
+    <Property Name="s5" Type="Boolean" />
+    <Property Name="s6" Type="Boolean" />
+    <Property Name="s7" Type="Boolean" />
+    <Property Name="s8" Type="Boolean" />
+    <Property Name="s9" Type="Boolean" />
+    <Property Name="s10" Type="Boolean" />
+    <Property Name="s11" Type="Boolean" />
+    <Property Name="s12" Type="Boolean" />
+    <Property Name="s13" Type="Boolean" />
+    <Property Name="s14" Type="Boolean" />
+    <Property Name="s15" Type="Boolean" />
+    <Property Name="s16" Type="Boolean" />
+    <Property Name="s17" Type="Boolean" />
+    <Property Name="s18" Type="Boolean" />
+    <Property Name="s19" Type="Boolean" />
+    <Property Name="s20" Type="Boolean" />
+    <Property Name="s21" Type="Boolean" />
+    <Property Name="s22" Type="Boolean" />
+    <Property Name="s23" Type="Boolean" />
+    <Property Name="s24" Type="Boolean" />
+    <Property Name="d1" Type="Boolean" />
+    <Property Name="d2" Type="Boolean" />
+    <Property Name="d3" Type="Boolean" />
+    <Property Name="d4" Type="Boolean" />
+    <Property Name="d5" Type="Boolean" />
+    <Property Name="d6" Type="Boolean" />
+    <Property Name="d7" Type="Boolean" />
+    <Property Name="d8" Type="Boolean" />
+    <Property Name="d9" Type="Boolean" />
+    <Property Name="d10" Type="Boolean" />
+    <Property Name="d11" Type="Boolean" />
+    <Property Name="d12" Type="Boolean" />
+    <Property Name="d13" Type="Boolean" />
+    <Property Name="d14" Type="Boolean" />
+    <Property Name="d15" Type="Boolean" />
+    <Property Name="d16" Type="Boolean" />
+    <Property Name="d17" Type="Boolean" />
+    <Property Name="d18" Type="Boolean" />
+    <Property Name="d19" Type="Boolean" />
+    <Property Name="d20" Type="Boolean" />
+    <Property Name="d21" Type="Boolean" />
+    <Property Name="d22" Type="Boolean" />
+    <Property Name="d23" Type="Boolean" />
+    <Property Name="d24" Type="Boolean" />
+    <Property Name="tarea_id_tarea" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tarea" Relationship="Self.horario_tarea_fk" FromRole="horario" ToRole="tarea" />
+  </EntityType>
+  <EntityType Name="robot">
+    <Key>
+      <PropertyRef Name="id_robot" />
+    </Key>
+    <Property Name="id_robot" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre_robot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tarea" Relationship="Self.task_robot_fk" FromRole="robot" ToRole="tarea" />
+    <NavigationProperty Name="servidor" Relationship="Self.robot_server" FromRole="robot" ToRole="servidor" />
+    <NavigationProperty Name="sistema_operacional" Relationship="Self.sys_robot" FromRole="robot" ToRole="sistema_operacional" />
+  </EntityType>
+  <EntityType Name="servidor">
+    <Key>
+      <PropertyRef Name="id_servidor" />
+    </Key>
+    <Property Name="id_servidor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre_servidor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ip_servidor" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="cta_runner" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="robot" Relationship="Self.robot_server" FromRole="servidor" ToRole="robot" />
+  </EntityType>
+  <EntityType Name="sistema_operacional">
+    <Key>
+      <PropertyRef Name="id_sistema" />
+    </Key>
+    <Property Name="id_sistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre_sis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="version" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="credenciales" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="robot" Relationship="Self.sys_robot" FromRole="sistema_operacional" ToRole="robot" />
+  </EntityType>
+  <EntityType Name="tarea">
+    <Key>
+      <PropertyRef Name="id_tarea" />
+    </Key>
+    <Property Name="id_tarea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre_tarea" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="robot_id_robot" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="horario" Relationship="Self.horario_tarea_fk" FromRole="tarea" ToRole="horario" />
+    <NavigationProperty Name="robot" Relationship="Self.task_robot_fk" FromRole="tarea" ToRole="robot" />
+  </EntityType>
+  <Association Name="horario_tarea_fk">
+    <End Role="tarea" Type="Self.tarea" Multiplicity="1" />
+    <End Role="horario" Type="Self.horario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tarea">
+        <PropertyRef Name="id_tarea" />
+      </Principal>
+      <Dependent Role="horario">
+        <PropertyRef Name="tarea_id_tarea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="task_robot_fk">
+    <End Role="robot" Type="Self.robot" Multiplicity="1" />
+    <End Role="tarea" Type="Self.tarea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="robot">
+        <PropertyRef Name="id_robot" />
+      </Principal>
+      <Dependent Role="tarea">
+        <PropertyRef Name="robot_id_robot" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="robot_server">
+    <End Role="robot" Type="Self.robot" Multiplicity="*" />
+    <End Role="servidor" Type="Self.servidor" Multiplicity="*" />
+  </Association>
+  <Association Name="sys_robot">
+    <End Role="sistema_operacional" Type="Self.sistema_operacional" Multiplicity="*" />
+    <End Role="robot" Type="Self.robot" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="DemoRobotEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="horario" EntityType="Self.horario" />
+    <EntitySet Name="robot" EntityType="Self.robot" />
+    <EntitySet Name="servidor" EntityType="Self.servidor" />
+    <EntitySet Name="sistema_operacional" EntityType="Self.sistema_operacional" />
+    <EntitySet Name="tarea" EntityType="Self.tarea" />
+    <AssociationSet Name="horario_tarea_fk" Association="Self.horario_tarea_fk">
+      <End Role="tarea" EntitySet="tarea" />
+      <End Role="horario" EntitySet="horario" />
+    </AssociationSet>
+    <AssociationSet Name="task_robot_fk" Association="Self.task_robot_fk">
+      <End Role="robot" EntitySet="robot" />
+      <End Role="tarea" EntitySet="tarea" />
+    </AssociationSet>
+    <AssociationSet Name="robot_server" Association="Self.robot_server">
+      <End Role="robot" EntitySet="robot" />
+      <End Role="servidor" EntitySet="servidor" />
+    </AssociationSet>
+    <AssociationSet Name="sys_robot" Association="Self.sys_robot">
+      <End Role="sistema_operacional" EntitySet="sistema_operacional" />
+      <End Role="robot" EntitySet="robot" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

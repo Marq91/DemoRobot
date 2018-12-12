@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DemoRobotModelStoreContainer" CdmEntityContainer="DemoRobotEntities">
+    <EntitySetMapping Name="horario">
+      <EntityTypeMapping TypeName="DemoRobotModel.horario">
+        <MappingFragment StoreEntitySet="horario">
+          <ScalarProperty Name="idhorario" ColumnName="idhorario" />
+          <ScalarProperty Name="l1" ColumnName="l1" />
+          <ScalarProperty Name="l2" ColumnName="l2" />
+          <ScalarProperty Name="l3" ColumnName="l3" />
+          <ScalarProperty Name="l4" ColumnName="l4" />
+          <ScalarProperty Name="l5" ColumnName="l5" />
+          <ScalarProperty Name="l6" ColumnName="l6" />
+          <ScalarProperty Name="l7" ColumnName="l7" />
+          <ScalarProperty Name="l8" ColumnName="l8" />
+          <ScalarProperty Name="l9" ColumnName="l9" />
+          <ScalarProperty Name="l10" ColumnName="l10" />
+          <ScalarProperty Name="l11" ColumnName="l11" />
+          <ScalarProperty Name="l12" ColumnName="l12" />
+          <ScalarProperty Name="l13" ColumnName="l13" />
+          <ScalarProperty Name="l14" ColumnName="l14" />
+          <ScalarProperty Name="l15" ColumnName="l15" />
+          <ScalarProperty Name="l16" ColumnName="l16" />
+          <ScalarProperty Name="l17" ColumnName="l17" />
+          <ScalarProperty Name="l18" ColumnName="l18" />
+          <ScalarProperty Name="l19" ColumnName="l19" />
+          <ScalarProperty Name="l20" ColumnName="l20" />
+          <ScalarProperty Name="l21" ColumnName="l21" />
+          <ScalarProperty Name="l22" ColumnName="l22" />
+          <ScalarProperty Name="l23" ColumnName="l23" />
+          <ScalarProperty Name="l24" ColumnName="l24" />
+          <ScalarProperty Name="ma1" ColumnName="ma1" />
+          <ScalarProperty Name="ma2" ColumnName="ma2" />
+          <ScalarProperty Name="ma3" ColumnName="ma3" />
+          <ScalarProperty Name="ma4" ColumnName="ma4" />
+          <ScalarProperty Name="ma5" ColumnName="ma5" />
+          <ScalarProperty Name="ma6" ColumnName="ma6" />
+          <ScalarProperty Name="ma7" ColumnName="ma7" />
+          <ScalarProperty Name="ma8" ColumnName="ma8" />
+          <ScalarProperty Name="ma9" ColumnName="ma9" />
+          <ScalarProperty Name="ma10" ColumnName="ma10" />
+          <ScalarProperty Name="ma11" ColumnName="ma11" />
+          <ScalarProperty Name="ma12" ColumnName="ma12" />
+          <ScalarProperty Name="ma13" ColumnName="ma13" />
+          <ScalarProperty Name="ma14" ColumnName="ma14" />
+          <ScalarProperty Name="ma15" ColumnName="ma15" />
+          <ScalarProperty Name="ma16" ColumnName="ma16" />
+          <ScalarProperty Name="ma17" ColumnName="ma17" />
+          <ScalarProperty Name="ma18" ColumnName="ma18" />
+          <ScalarProperty Name="ma19" ColumnName="ma19" />
+          <ScalarProperty Name="ma20" ColumnName="ma20" />
+          <ScalarProperty Name="ma21" ColumnName="ma21" />
+          <ScalarProperty Name="ma22" ColumnName="ma22" />
+          <ScalarProperty Name="ma23" ColumnName="ma23" />
+          <ScalarProperty Name="ma24" ColumnName="ma24" />
+          <ScalarProperty Name="mi1" ColumnName="mi1" />
+          <ScalarProperty Name="mi2" ColumnName="mi2" />
+          <ScalarProperty Name="mi3" ColumnName="mi3" />
+          <ScalarProperty Name="mi4" ColumnName="mi4" />
+          <ScalarProperty Name="mi5" ColumnName="mi5" />
+          <ScalarProperty Name="mi6" ColumnName="mi6" />
+          <ScalarProperty Name="mi7" ColumnName="mi7" />
+          <ScalarProperty Name="mi8" ColumnName="mi8" />
+          <ScalarProperty Name="mi9" ColumnName="mi9" />
+          <ScalarProperty Name="mi10" ColumnName="mi10" />
+          <ScalarProperty Name="mi11" ColumnName="mi11" />
+          <ScalarProperty Name="mi12" ColumnName="mi12" />
+          <ScalarProperty Name="mi13" ColumnName="mi13" />
+          <ScalarProperty Name="mi14" ColumnName="mi14" />
+          <ScalarProperty Name="mi15" ColumnName="mi15" />
+          <ScalarProperty Name="mi16" ColumnName="mi16" />
+          <ScalarProperty Name="mi17" ColumnName="mi17" />
+          <ScalarProperty Name="mi18" ColumnName="mi18" />
+          <ScalarProperty Name="mi19" ColumnName="mi19" />
+          <ScalarProperty Name="mi20" ColumnName="mi20" />
+          <ScalarProperty Name="mi21" ColumnName="mi21" />
+          <ScalarProperty Name="mi22" ColumnName="mi22" />
+          <ScalarProperty Name="mi23" ColumnName="mi23" />
+          <ScalarProperty Name="mi24" ColumnName="mi24" />
+          <ScalarProperty Name="j1" ColumnName="j1" />
+          <ScalarProperty Name="j2" ColumnName="j2" />
+          <ScalarProperty Name="j3" ColumnName="j3" />
+          <ScalarProperty Name="j4" ColumnName="j4" />
+          <ScalarProperty Name="j5" ColumnName="j5" />
+          <ScalarProperty Name="j6" ColumnName="j6" />
+          <ScalarProperty Name="j7" ColumnName="j7" />
+          <ScalarProperty Name="j8" ColumnName="j8" />
+          <ScalarProperty Name="j9" ColumnName="j9" />
+          <ScalarProperty Name="j10" ColumnName="j10" />
+          <ScalarProperty Name="j11" ColumnName="j11" />
+          <ScalarProperty Name="j12" ColumnName="j12" />
+          <ScalarProperty Name="j13" ColumnName="j13" />
+          <ScalarProperty Name="j14" ColumnName="j14" />
+          <ScalarProperty Name="j15" ColumnName="j15" />
+          <ScalarProperty Name="j16" ColumnName="j16" />
+          <ScalarProperty Name="j17" ColumnName="j17" />
+          <ScalarProperty Name="j18" ColumnName="j18" />
+          <ScalarProperty Name="j19" ColumnName="j19" />
+          <ScalarProperty Name="j20" ColumnName="j20" />
+          <ScalarProperty Name="j21" ColumnName="j21" />
+          <ScalarProperty Name="j22" ColumnName="j22" />
+          <ScalarProperty Name="j23" ColumnName="j23" />
+          <ScalarProperty Name="j24" ColumnName="j24" />
+          <ScalarProperty Name="v1" ColumnName="v1" />
+          <ScalarProperty Name="v2" ColumnName="v2" />
+          <ScalarProperty Name="v3" ColumnName="v3" />
+          <ScalarProperty Name="v4" ColumnName="v4" />
+          <ScalarProperty Name="v5" ColumnName="v5" />
+          <ScalarProperty Name="v6" ColumnName="v6" />
+          <ScalarProperty Name="v7" ColumnName="v7" />
+          <ScalarProperty Name="v8" ColumnName="v8" />
+          <ScalarProperty Name="v9" ColumnName="v9" />
+          <ScalarProperty Name="v10" ColumnName="v10" />
+          <ScalarProperty Name="v11" ColumnName="v11" />
+          <ScalarProperty Name="v12" ColumnName="v12" />
+          <ScalarProperty Name="v13" ColumnName="v13" />
+          <ScalarProperty Name="v14" ColumnName="v14" />
+          <ScalarProperty Name="v15" ColumnName="v15" />
+          <ScalarProperty Name="v16" ColumnName="v16" />
+          <ScalarProperty Name="v17" ColumnName="v17" />
+          <ScalarProperty Name="v18" ColumnName="v18" />
+          <ScalarProperty Name="v19" ColumnName="v19" />
+          <ScalarProperty Name="v20" ColumnName="v20" />
+          <ScalarProperty Name="v21" ColumnName="v21" />
+          <ScalarProperty Name="v22" ColumnName="v22" />
+          <ScalarProperty Name="v23" ColumnName="v23" />
+          <ScalarProperty Name="v24" ColumnName="v24" />
+          <ScalarProperty Name="s1" ColumnName="s1" />
+          <ScalarProperty Name="s2" ColumnName="s2" />
+          <ScalarProperty Name="s3" ColumnName="s3" />
+          <ScalarProperty Name="s4" ColumnName="s4" />
+          <ScalarProperty Name="s5" ColumnName="s5" />
+          <ScalarProperty Name="s6" ColumnName="s6" />
+          <ScalarProperty Name="s7" ColumnName="s7" />
+          <ScalarProperty Name="s8" ColumnName="s8" />
+          <ScalarProperty Name="s9" ColumnName="s9" />
+          <ScalarProperty Name="s10" ColumnName="s10" />
+          <ScalarProperty Name="s11" ColumnName="s11" />
+          <ScalarProperty Name="s12" ColumnName="s12" />
+          <ScalarProperty Name="s13" ColumnName="s13" />
+          <ScalarProperty Name="s14" ColumnName="s14" />
+          <ScalarProperty Name="s15" ColumnName="s15" />
+          <ScalarProperty Name="s16" ColumnName="s16" />
+          <ScalarProperty Name="s17" ColumnName="s17" />
+          <ScalarProperty Name="s18" ColumnName="s18" />
+          <ScalarProperty Name="s19" ColumnName="s19" />
+          <ScalarProperty Name="s20" ColumnName="s20" />
+          <ScalarProperty Name="s21" ColumnName="s21" />
+          <ScalarProperty Name="s22" ColumnName="s22" />
+          <ScalarProperty Name="s23" ColumnName="s23" />
+          <ScalarProperty Name="s24" ColumnName="s24" />
+          <ScalarProperty Name="d1" ColumnName="d1" />
+          <ScalarProperty Name="d2" ColumnName="d2" />
+          <ScalarProperty Name="d3" ColumnName="d3" />
+          <ScalarProperty Name="d4" ColumnName="d4" />
+          <ScalarProperty Name="d5" ColumnName="d5" />
+          <ScalarProperty Name="d6" ColumnName="d6" />
+          <ScalarProperty Name="d7" ColumnName="d7" />
+          <ScalarProperty Name="d8" ColumnName="d8" />
+          <ScalarProperty Name="d9" ColumnName="d9" />
+          <ScalarProperty Name="d10" ColumnName="d10" />
+          <ScalarProperty Name="d11" ColumnName="d11" />
+          <ScalarProperty Name="d12" ColumnName="d12" />
+          <ScalarProperty Name="d13" ColumnName="d13" />
+          <ScalarProperty Name="d14" ColumnName="d14" />
+          <ScalarProperty Name="d15" ColumnName="d15" />
+          <ScalarProperty Name="d16" ColumnName="d16" />
+          <ScalarProperty Name="d17" ColumnName="d17" />
+          <ScalarProperty Name="d18" ColumnName="d18" />
+          <ScalarProperty Name="d19" ColumnName="d19" />
+          <ScalarProperty Name="d20" ColumnName="d20" />
+          <ScalarProperty Name="d21" ColumnName="d21" />
+          <ScalarProperty Name="d22" ColumnName="d22" />
+          <ScalarProperty Name="d23" ColumnName="d23" />
+          <ScalarProperty Name="d24" ColumnName="d24" />
+          <ScalarProperty Name="tarea_id_tarea" ColumnName="tarea_id_tarea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="robot">
+      <EntityTypeMapping TypeName="DemoRobotModel.robot">
+        <MappingFragment StoreEntitySet="robot">
+          <ScalarProperty Name="id_robot" ColumnName="id_robot" />
+          <ScalarProperty Name="nombre_robot" ColumnName="nombre_robot" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="servidor">
+      <EntityTypeMapping TypeName="DemoRobotModel.servidor">
+        <MappingFragment StoreEntitySet="servidor">
+          <ScalarProperty Name="id_servidor" ColumnName="id_servidor" />
+          <ScalarProperty Name="nombre_servidor" ColumnName="nombre_servidor" />
+          <ScalarProperty Name="ip_servidor" ColumnName="ip_servidor" />
+          <ScalarProperty Name="cta_runner" ColumnName="cta_runner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sistema_operacional">
+      <EntityTypeMapping TypeName="DemoRobotModel.sistema_operacional">
+        <MappingFragment StoreEntitySet="sistema_operacional">
+          <ScalarProperty Name="id_sistema" ColumnName="id_sistema" />
+          <ScalarProperty Name="nombre_sis" ColumnName="nombre_sis" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="credenciales" ColumnName="credenciales" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tarea">
+      <EntityTypeMapping TypeName="DemoRobotModel.tarea">
+        <MappingFragment StoreEntitySet="tarea">
+          <ScalarProperty Name="id_tarea" ColumnName="id_tarea" />
+          <ScalarProperty Name="nombre_tarea" ColumnName="nombre_tarea" />
+          <ScalarProperty Name="robot_id_robot" ColumnName="robot_id_robot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="robot_server" TypeName="DemoRobotModel.robot_server" StoreEntitySet="robot_server">
+      <EndProperty Name="robot">
+        <ScalarProperty Name="id_robot" ColumnName="robot_id_robot" />
+      </EndProperty>
+      <EndProperty Name="servidor">
+        <ScalarProperty Name="id_servidor" ColumnName="server_id_server" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="sys_robot" TypeName="DemoRobotModel.sys_robot" StoreEntitySet="sys_robot">
+      <EndProperty Name="sistema_operacional">
+        <ScalarProperty Name="id_sistema" ColumnName="operational_system_id_system" />
+      </EndProperty>
+      <EndProperty Name="robot">
+        <ScalarProperty Name="id_robot" ColumnName="robot_id_robot" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

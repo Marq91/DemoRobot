@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DemoRobotModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="horario">
+    <Key>
+      <PropertyRef Name="idhorario" />
+    </Key>
+    <Property Name="idhorario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="l1" Type="bit" />
+    <Property Name="l2" Type="bit" />
+    <Property Name="l3" Type="bit" />
+    <Property Name="l4" Type="bit" />
+    <Property Name="l5" Type="bit" />
+    <Property Name="l6" Type="bit" />
+    <Property Name="l7" Type="bit" />
+    <Property Name="l8" Type="bit" />
+    <Property Name="l9" Type="bit" />
+    <Property Name="l10" Type="bit" />
+    <Property Name="l11" Type="bit" />
+    <Property Name="l12" Type="bit" />
+    <Property Name="l13" Type="bit" />
+    <Property Name="l14" Type="bit" />
+    <Property Name="l15" Type="bit" />
+    <Property Name="l16" Type="bit" />
+    <Property Name="l17" Type="bit" />
+    <Property Name="l18" Type="bit" />
+    <Property Name="l19" Type="bit" />
+    <Property Name="l20" Type="bit" />
+    <Property Name="l21" Type="bit" />
+    <Property Name="l22" Type="bit" />
+    <Property Name="l23" Type="bit" />
+    <Property Name="l24" Type="bit" />
+    <Property Name="ma1" Type="bit" />
+    <Property Name="ma2" Type="bit" />
+    <Property Name="ma3" Type="bit" />
+    <Property Name="ma4" Type="bit" />
+    <Property Name="ma5" Type="bit" />
+    <Property Name="ma6" Type="bit" />
+    <Property Name="ma7" Type="bit" />
+    <Property Name="ma8" Type="bit" />
+    <Property Name="ma9" Type="bit" />
+    <Property Name="ma10" Type="bit" />
+    <Property Name="ma11" Type="bit" />
+    <Property Name="ma12" Type="bit" />
+    <Property Name="ma13" Type="bit" />
+    <Property Name="ma14" Type="bit" />
+    <Property Name="ma15" Type="bit" />
+    <Property Name="ma16" Type="bit" />
+    <Property Name="ma17" Type="bit" />
+    <Property Name="ma18" Type="bit" />
+    <Property Name="ma19" Type="bit" />
+    <Property Name="ma20" Type="bit" />
+    <Property Name="ma21" Type="bit" />
+    <Property Name="ma22" Type="bit" />
+    <Property Name="ma23" Type="bit" />
+    <Property Name="ma24" Type="bit" />
+    <Property Name="mi1" Type="bit" />
+    <Property Name="mi2" Type="bit" />
+    <Property Name="mi3" Type="bit" />
+    <Property Name="mi4" Type="bit" />
+    <Property Name="mi5" Type="bit" />
+    <Property Name="mi6" Type="bit" />
+    <Property Name="mi7" Type="bit" />
+    <Property Name="mi8" Type="bit" />
+    <Property Name="mi9" Type="bit" />
+    <Property Name="mi10" Type="bit" />
+    <Property Name="mi11" Type="bit" />
+    <Property Name="mi12" Type="bit" />
+    <Property Name="mi13" Type="bit" />
+    <Property Name="mi14" Type="bit" />
+    <Property Name="mi15" Type="bit" />
+    <Property Name="mi16" Type="bit" />
+    <Property Name="mi17" Type="bit" />
+    <Property Name="mi18" Type="bit" />
+    <Property Name="mi19" Type="bit" />
+    <Property Name="mi20" Type="bit" />
+    <Property Name="mi21" Type="bit" />
+    <Property Name="mi22" Type="bit" />
+    <Property Name="mi23" Type="bit" />
+    <Property Name="mi24" Type="bit" />
+    <Property Name="j1" Type="bit" />
+    <Property Name="j2" Type="bit" />
+    <Property Name="j3" Type="bit" />
+    <Property Name="j4" Type="bit" />
+    <Property Name="j5" Type="bit" />
+    <Property Name="j6" Type="bit" />
+    <Property Name="j7" Type="bit" />
+    <Property Name="j8" Type="bit" />
+    <Property Name="j9" Type="bit" />
+    <Property Name="j10" Type="bit" />
+    <Property Name="j11" Type="bit" />
+    <Property Name="j12" Type="bit" />
+    <Property Name="j13" Type="bit" />
+    <Property Name="j14" Type="bit" />
+    <Property Name="j15" Type="bit" />
+    <Property Name="j16" Type="bit" />
+    <Property Name="j17" Type="bit" />
+    <Property Name="j18" Type="bit" />
+    <Property Name="j19" Type="bit" />
+    <Property Name="j20" Type="bit" />
+    <Property Name="j21" Type="bit" />
+    <Property Name="j22" Type="bit" />
+    <Property Name="j23" Type="bit" />
+    <Property Name="j24" Type="bit" />
+    <Property Name="v1" Type="bit" />
+    <Property Name="v2" Type="bit" />
+    <Property Name="v3" Type="bit" />
+    <Property Name="v4" Type="bit" />
+    <Property Name="v5" Type="bit" />
+    <Property Name="v6" Type="bit" />
+    <Property Name="v7" Type="bit" />
+    <Property Name="v8" Type="bit" />
+    <Property Name="v9" Type="bit" />
+    <Property Name="v10" Type="bit" />
+    <Property Name="v11" Type="bit" />
+    <Property Name="v12" Type="bit" />
+    <Property Name="v13" Type="bit" />
+    <Property Name="v14" Type="bit" />
+    <Property Name="v15" Type="bit" />
+    <Property Name="v16" Type="bit" />
+    <Property Name="v17" Type="bit" />
+    <Property Name="v18" Type="bit" />
+    <Property Name="v19" Type="bit" />
+    <Property Name="v20" Type="bit" />
+    <Property Name="v21" Type="bit" />
+    <Property Name="v22" Type="bit" />
+    <Property Name="v23" Type="bit" />
+    <Property Name="v24" Type="bit" />
+    <Property Name="s1" Type="bit" />
+    <Property Name="s2" Type="bit" />
+    <Property Name="s3" Type="bit" />
+    <Property Name="s4" Type="bit" />
+    <Property Name="s5" Type="bit" />
+    <Property Name="s6" Type="bit" />
+    <Property Name="s7" Type="bit" />
+    <Property Name="s8" Type="bit" />
+    <Property Name="s9" Type="bit" />
+    <Property Name="s10" Type="bit" />
+    <Property Name="s11" Type="bit" />
+    <Property Name="s12" Type="bit" />
+    <Property Name="s13" Type="bit" />
+    <Property Name="s14" Type="bit" />
+    <Property Name="s15" Type="bit" />
+    <Property Name="s16" Type="bit" />
+    <Property Name="s17" Type="bit" />
+    <Property Name="s18" Type="bit" />
+    <Property Name="s19" Type="bit" />
+    <Property Name="s20" Type="bit" />
+    <Property Name="s21" Type="bit" />
+    <Property Name="s22" Type="bit" />
+    <Property Name="s23" Type="bit" />
+    <Property Name="s24" Type="bit" />
+    <Property Name="d1" Type="bit" />
+    <Property Name="d2" Type="bit" />
+    <Property Name="d3" Type="bit" />
+    <Property Name="d4" Type="bit" />
+    <Property Name="d5" Type="bit" />
+    <Property Name="d6" Type="bit" />
+    <Property Name="d7" Type="bit" />
+    <Property Name="d8" Type="bit" />
+    <Property Name="d9" Type="bit" />
+    <Property Name="d10" Type="bit" />
+    <Property Name="d11" Type="bit" />
+    <Property Name="d12" Type="bit" />
+    <Property Name="d13" Type="bit" />
+    <Property Name="d14" Type="bit" />
+    <Property Name="d15" Type="bit" />
+    <Property Name="d16" Type="bit" />
+    <Property Name="d17" Type="bit" />
+    <Property Name="d18" Type="bit" />
+    <Property Name="d19" Type="bit" />
+    <Property Name="d20" Type="bit" />
+    <Property Name="d21" Type="bit" />
+    <Property Name="d22" Type="bit" />
+    <Property Name="d23" Type="bit" />
+    <Property Name="d24" Type="bit" />
+    <Property Name="tarea_id_tarea" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="robot">
+    <Key>
+      <PropertyRef Name="id_robot" />
+    </Key>
+    <Property Name="id_robot" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_robot" Type="varchar" MaxLength="50" />
+    <Property Name="estado" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="robot_server">
+    <Key>
+      <PropertyRef Name="robot_id_robot" />
+      <PropertyRef Name="server_id_server" />
+    </Key>
+    <Property Name="robot_id_robot" Type="int" Nullable="false" />
+    <Property Name="server_id_server" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="servidor">
+    <Key>
+      <PropertyRef Name="id_servidor" />
+    </Key>
+    <Property Name="id_servidor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_servidor" Type="varchar" MaxLength="50" />
+    <Property Name="ip_servidor" Type="varchar" MaxLength="25" />
+    <Property Name="cta_runner" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="sistema_operacional">
+    <Key>
+      <PropertyRef Name="id_sistema" />
+    </Key>
+    <Property Name="id_sistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_sis" Type="varchar" MaxLength="50" />
+    <Property Name="version" Type="varchar" MaxLength="10" />
+    <Property Name="credenciales" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="sys_robot">
+    <Key>
+      <PropertyRef Name="operational_system_id_system" />
+      <PropertyRef Name="robot_id_robot" />
+    </Key>
+    <Property Name="operational_system_id_system" Type="int" Nullable="false" />
+    <Property Name="robot_id_robot" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tarea">
+    <Key>
+      <PropertyRef Name="id_tarea" />
+    </Key>
+    <Property Name="id_tarea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_tarea" Type="varchar" MaxLength="50" />
+    <Property Name="robot_id_robot" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="horario_tarea_fk">
+    <End Role="tarea" Type="Self.tarea" Multiplicity="1" />
+    <End Role="horario" Type="Self.horario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tarea">
+        <PropertyRef Name="id_tarea" />
+      </Principal>
+      <Dependent Role="horario">
+        <PropertyRef Name="tarea_id_tarea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="robot_server_robot_fk">
+    <End Role="robot" Type="Self.robot" Multiplicity="1" />
+    <End Role="robot_server" Type="Self.robot_server" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="robot">
+        <PropertyRef Name="id_robot" />
+      </Principal>
+      <Dependent Role="robot_server">
+        <PropertyRef Name="robot_id_robot" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="robot_server_server_fk">
+    <End Role="servidor" Type="Self.servidor" Multiplicity="1" />
+    <End Role="robot_server" Type="Self.robot_server" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="servidor">
+        <PropertyRef Name="id_servidor" />
+      </Principal>
+      <Dependent Role="robot_server">
+        <PropertyRef Name="server_id_server" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="sys_robot_operational_system_fk">
+    <End Role="sistema_operacional" Type="Self.sistema_operacional" Multiplicity="1" />
+    <End Role="sys_robot" Type="Self.sys_robot" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sistema_operacional">
+        <PropertyRef Name="id_sistema" />
+      </Principal>
+      <Dependent Role="sys_robot">
+        <PropertyRef Name="operational_system_id_system" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="sys_robot_robot_fk">
+    <End Role="robot" Type="Self.robot" Multiplicity="1" />
+    <End Role="sys_robot" Type="Self.sys_robot" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="robot">
+        <PropertyRef Name="id_robot" />
+      </Principal>
+      <Dependent Role="sys_robot">
+        <PropertyRef Name="robot_id_robot" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="task_robot_fk">
+    <End Role="robot" Type="Self.robot" Multiplicity="1" />
+    <End Role="tarea" Type="Self.tarea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="robot">
+        <PropertyRef Name="id_robot" />
+      </Principal>
+      <Dependent Role="tarea">
+        <PropertyRef Name="robot_id_robot" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DemoRobotModelStoreContainer">
+    <EntitySet Name="horario" EntityType="Self.horario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="robot" EntityType="Self.robot" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="robot_server" EntityType="Self.robot_server" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="servidor" EntityType="Self.servidor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sistema_operacional" EntityType="Self.sistema_operacional" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sys_robot" EntityType="Self.sys_robot" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tarea" EntityType="Self.tarea" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="horario_tarea_fk" Association="Self.horario_tarea_fk">
+      <End Role="tarea" EntitySet="tarea" />
+      <End Role="horario" EntitySet="horario" />
+    </AssociationSet>
+    <AssociationSet Name="robot_server_robot_fk" Association="Self.robot_server_robot_fk">
+      <End Role="robot" EntitySet="robot" />
+      <End Role="robot_server" EntitySet="robot_server" />
+    </AssociationSet>
+    <AssociationSet Name="robot_server_server_fk" Association="Self.robot_server_server_fk">
+      <End Role="servidor" EntitySet="servidor" />
+      <End Role="robot_server" EntitySet="robot_server" />
+    </AssociationSet>
+    <AssociationSet Name="sys_robot_operational_system_fk" Association="Self.sys_robot_operational_system_fk">
+      <End Role="sistema_operacional" EntitySet="sistema_operacional" />
+      <End Role="sys_robot" EntitySet="sys_robot" />
+    </AssociationSet>
+    <AssociationSet Name="sys_robot_robot_fk" Association="Self.sys_robot_robot_fk">
+      <End Role="robot" EntitySet="robot" />
+      <End Role="sys_robot" EntitySet="sys_robot" />
+    </AssociationSet>
+    <AssociationSet Name="task_robot_fk" Association="Self.task_robot_fk">
+      <End Role="robot" EntitySet="robot" />
+      <End Role="tarea" EntitySet="tarea" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
