@@ -28,7 +28,7 @@ namespace DemoRobot.Controllers
             }
             else
             {
-                tarea tar = db.tarea.Find();
+                tarea tar = db.tarea.Find(id);
                 if (tar == null)
                 {
                     return HttpNotFound();
@@ -58,8 +58,8 @@ namespace DemoRobot.Controllers
             //var sCombo = db.robot.Join(db.tarea, rob => rob.id_robot, hor => hor.id_robot, (rob, hor) => new { rob, hor }).ToList();
 
             var sCombo = db.robot
-                .OrderBy(c => c.nombre_robot)
-                .ToList();
+                            .OrderBy(c => c.nombre_robot)
+                            .ToList();
 
             ViewBag.nombre_robot = new SelectList(sCombo, "id_robot", "nombre_robot");
             //ViewBag.nombre_robot = new SelectList(sCombo, "nombre_robot");
@@ -92,44 +92,61 @@ namespace DemoRobot.Controllers
         // GET: Tarea/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            tarea tar = db.tarea.SingleOrDefault(c => c.id_tarea == id);
+            var sCombo = db.robot
+                            .OrderBy(c => c.nombre_robot)
+                            .ToList();
+
+            ViewBag.nombre_robot = new SelectList(sCombo, "id_robot", "nombre_robot", tar.nombre_tarea);
+
+            return View(tar);
         }
 
         // POST: Tarea/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(tarea model)
         {
             try
             {
-                // TODO: Add update logic here
+                tarea tar = db.tarea.SingleOrDefault(c => c.id_tarea == model.id_tarea);
 
+                if (tar != null)
+                {
+                    tar.nombre_tarea = model.nombre_tarea;
+                    tar.id_robot = model.id_robot;
+                    db.SaveChanges();
+
+
+                }
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return RedirectToAction("Index", "Home");
             }
         }
 
         // GET: Tarea/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            tarea tar = db.tarea.SingleOrDefault(c => c.id_tarea == id);
+            return View(tar);
         }
 
         // POST: Tarea/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(tarea model)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                tarea tar = db.tarea.SingleOrDefault(c => c.id_tarea == model.id_tarea);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                tarea tar = db.tarea.SingleOrDefault(c => c.id_tarea == model.id_tarea);
+                return View(tar);
             }
         }
     }

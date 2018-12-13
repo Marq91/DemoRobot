@@ -1,15 +1,16 @@
 ﻿@model DemoRobot.Models.tarea
 
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>tarea</h4>
+        <h4>Tarea</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id_tarea)
+
         <div class="form-group">
             @Html.LabelFor(model => model.nombre_tarea, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -21,21 +22,15 @@
         <div class="form-group">
             @Html.LabelFor(model => model.id_robot, "id_robot", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*@Html.DropDownList("id_robot", null, htmlAttributes: new { @class = "form-control" })*@  @*linea original*@
-                
                 @Html.DropDownList("id_robot", (IEnumerable<SelectListItem>)ViewBag.nombre_robot, "Seleccione", new { @class = "form-control" })
+                @*@Html.DropDownList("id_robot", null, htmlAttributes: new { @class = "form-control" })*@
                 @Html.ValidationMessageFor(model => model.id_robot, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        @*Lista Prueba*@
-        <div class="dropdown">
-            @*@Html.DropDownList("nombre_robot", (IEnumerable<SelectListItem>)ViewBag.nombre_robot, new { style = "width:450px" })*@
-        </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>

@@ -61,7 +61,6 @@ namespace DemoRobot.Controllers
                     return RedirectToRoute("Tarea");
                     //return RedirectToAction("Create");
                 }
-
                 return View(rob);
                 
             }

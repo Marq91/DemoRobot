@@ -1,0 +1,96 @@
+﻿@model DemoRobot.Models.horario
+
+<div>
+    <br /> 
+    <h3>Horario Detalle</h3>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tarea.nombre_tarea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tarea.nombre_tarea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hora_inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hora_inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hora_fin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hora_fin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.l)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.l)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.m)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.m)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.x)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.x)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.j)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.j)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.v)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.v)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.s)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.s)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.d)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.d)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_horario }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

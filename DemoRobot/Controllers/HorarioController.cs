@@ -21,30 +21,70 @@ namespace DemoRobot.Controllers
         }
 
         // GET: Horario/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            else
+            {
+                horario hor = db.horario.Find(id);
+                if (hor == null)
+                {
+                    return HttpNotFound();
+                }
+                else
+                {
+                    return View(hor);
+                }
+            }
         }
+
+        //Lista Horario
+        public List<horario> ObtenerHorario()
+        {
+            var ta = new horario();
+            {
+                ta.id_horario.ToString();
+                ta.hora_inicio.ToString();
+                ta.hora_fin.ToString();
+            };
+
+            return new List<horario> { ta };
+        }
+
 
         // GET: Horario/Create
         public ActionResult Create()
         {
+            var sCombo = db.tarea
+                            .OrderBy(c => (c.nombre_tarea))
+                            .ToList();
+
+            ViewBag.nombre_tarea = new SelectList(sCombo, "id_tarea", "nombre_tarea");
+            
             return View();
         }
 
         // POST: Horario/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(horario model)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                {
+                    db.horario.Add(model);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
 
-                return RedirectToAction("Index");
+                return View(model);
             }
             catch
             {
-                return View();
+                return View(model);
             }
         }
 
@@ -73,22 +113,24 @@ namespace DemoRobot.Controllers
         // GET: Horario/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            horario hor = db.horario.SingleOrDefault(c => c.id_horario == id);
+            return View(hor);
         }
 
         // POST: Horario/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(horario model)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                horario hor = db.horario.SingleOrDefault(c => c.id_horario == model.id_horario);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                horario hor = db.horario.SingleOrDefault(c => c.id_horario == model.id_horario);
+                return View(hor);
             }
         }
     }
