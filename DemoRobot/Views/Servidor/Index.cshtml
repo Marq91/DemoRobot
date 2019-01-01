@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DemoRobot.Models.servidor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Servidores Listado</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_servidor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ip_servidor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cta_runner)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_servidor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ip_servidor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cta_runner)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id_servidor }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id_servidor }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id_servidor })
+            </td>
+        </tr>
+    }
+
+</table>

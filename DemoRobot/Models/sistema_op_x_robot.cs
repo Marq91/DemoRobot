@@ -12,15 +12,13 @@ namespace DemoRobot.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class sys_robot
+    public partial class sistema_op_x_robot
     {
-        public int id_system { get; set; }
+        public int id_robotsistema { get; set; }
         public int id_robot { get; set; }
+        public int id_sistema { get; set; }
     
         public virtual robot robot { get; set; }
         public virtual sistema_operacional sistema_operacional { get; set; }
-        public virtual sistema_operacional sistema_operacional1 { get; set; }
-        public virtual sys_robot sys_robot1 { get; set; }
-        public virtual sys_robot sys_robot2 { get; set; }
     }
 }

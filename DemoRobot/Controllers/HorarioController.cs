@@ -11,7 +11,7 @@ namespace DemoRobot.Controllers
 {
     public class HorarioController : Controller
     {
-        private DemoRobotEntities1 db = new DemoRobotEntities1();
+        private DemoRobotEntities db = new DemoRobotEntities();
 
         // GET: Horario
         public ActionResult Index()
@@ -111,26 +111,54 @@ namespace DemoRobot.Controllers
         }
 
         // GET: Horario/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            horario hor = db.horario.SingleOrDefault(c => c.id_horario == id);
-            return View(hor);
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            else
+            {
+                horario X = db.horario.Find(id);
+                if (X == null)
+                {
+                    return HttpNotFound();
+                }
+                else
+                {
+                    return View(X);
+                }
+
+            }
         }
 
         // POST: Horario/Delete/5
         [HttpPost]
-        public ActionResult Delete(horario model)
+        public ActionResult Delete(int id, horario model)
         {
             try
             {
-                horario hor = db.horario.SingleOrDefault(c => c.id_horario == model.id_horario);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    model = db.horario.Find(id);
+                    if (model == null)
+                    {
+                        return HttpNotFound();
+                    }
+                    else
+                    {
+                        db.horario.Remove(model);
+                        db.SaveChanges();
+                    }
+
+                    return RedirectToAction("Index");
+                }
+                return View(model);
+
             }
             catch
             {
-                horario hor = db.horario.SingleOrDefault(c => c.id_horario == model.id_horario);
-                return View(hor);
+                return View(model);
             }
         }
     }

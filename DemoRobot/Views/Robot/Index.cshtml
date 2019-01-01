@@ -4,36 +4,43 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Robot Listado</h2>
+<h2>Robots Listado</h2>
 
 <p>
-    @Html.ActionLink("Crear Nuevo", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            Nombre del Robot
+            @Html.DisplayNameFor(model => model.nombre_robot)
         </th>
-        <th> 
-            Estado
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.servidor.nombre_servidor)
         </th>
         <th></th>
     </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre_robot)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.estado)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_robot }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_robot }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_robot })
-        </td>
-    </tr>
-}
+    @*error modelo index robot*@
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_robot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servidor.nombre_servidor)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id_robot }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id_robot }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id_robot })
+            </td>
+        </tr>
+    }
 
 </table>

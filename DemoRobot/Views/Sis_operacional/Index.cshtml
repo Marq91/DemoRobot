@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DemoRobot.Models.sistema_operacional>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Sistemas Operacionales</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_sis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.version)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.credenciales)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_sis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.version)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.credenciales)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id_sistema }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id_sistema }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id_sistema })
+            </td>
+        </tr>
+    }
+
+</table>

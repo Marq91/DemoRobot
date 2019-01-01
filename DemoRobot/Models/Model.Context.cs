@@ -13,10 +13,10 @@ namespace DemoRobot.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DemoRobotEntities1 : DbContext
+    public partial class DemoRobotEntities : DbContext
     {
-        public DemoRobotEntities1()
-            : base("name=DemoRobotEntities1")
+        public DemoRobotEntities()
+            : base("name=DemoRobotEntities")
         {
         }
     
@@ -28,8 +28,8 @@ namespace DemoRobot.Models
         public virtual DbSet<horario> horario { get; set; }
         public virtual DbSet<robot> robot { get; set; }
         public virtual DbSet<servidor> servidor { get; set; }
+        public virtual DbSet<sistema_op_x_robot> sistema_op_x_robot { get; set; }
         public virtual DbSet<sistema_operacional> sistema_operacional { get; set; }
-        public virtual DbSet<sys_robot> sys_robot { get; set; }
         public virtual DbSet<tarea> tarea { get; set; }
     }
 }

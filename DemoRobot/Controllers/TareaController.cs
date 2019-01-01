@@ -1,16 +1,16 @@
-﻿using DemoRobot.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using DemoRobot.Models;
 
 namespace DemoRobot.Controllers
 {
     public class TareaController : Controller
     {
-        private DemoRobotEntities1 db = new DemoRobotEntities1();
+        private DemoRobotEntities db = new DemoRobotEntities();
 
         // GET: Tarea
         public ActionResult Index()
@@ -54,9 +54,7 @@ namespace DemoRobot.Controllers
         // GET: Tarea/Create
         public ActionResult Create()
         {
-            //Llamar lista de id para realizar el enlace de tarea y robot
-            //var sCombo = db.robot.Join(db.tarea, rob => rob.id_robot, hor => hor.id_robot, (rob, hor) => new { rob, hor }).ToList();
-
+            
             var sCombo = db.robot
                             .OrderBy(c => c.nombre_robot)
                             .ToList();
@@ -87,6 +85,7 @@ namespace DemoRobot.Controllers
             {
                 return View(tar);
             }
+
         }
 
         // GET: Tarea/Edit/5
@@ -113,6 +112,7 @@ namespace DemoRobot.Controllers
                 if (tar != null)
                 {
                     tar.nombre_tarea = model.nombre_tarea;
+                    //Se añade la relacion(id_robot) para ser eliminada tambien
                     tar.id_robot = model.id_robot;
                     db.SaveChanges();
 
@@ -127,26 +127,54 @@ namespace DemoRobot.Controllers
         }
 
         // GET: Tarea/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            tarea tar = db.tarea.SingleOrDefault(c => c.id_tarea == id);
-            return View(tar);
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            else
+            {
+                tarea X = db.tarea.Find(id);
+                if (X == null)
+                {
+                    return HttpNotFound();
+                }
+                else
+                {
+                    return View(X);
+                }
+
+            }
         }
 
         // POST: Tarea/Delete/5
         [HttpPost]
-        public ActionResult Delete(tarea model)
+        public ActionResult Delete(int id, tarea model)
         {
             try
             {
-                tarea tar = db.tarea.SingleOrDefault(c => c.id_tarea == model.id_tarea);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    model = db.tarea.Find(id);
+                    if (model == null)
+                    {
+                        return HttpNotFound();
+                    }
+                    else
+                    {
+                        db.tarea.Remove(model);
+                        db.SaveChanges();
+                    }
+
+                    return RedirectToAction("Index");
+                }
+                return View(model);
+
             }
             catch
             {
-                tarea tar = db.tarea.SingleOrDefault(c => c.id_tarea == model.id_tarea);
-                return View(tar);
+                return View(model);
             }
         }
     }

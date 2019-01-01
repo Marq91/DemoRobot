@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DemoRobotModelStoreContainer" CdmEntityContainer="DemoRobotEntities1">
+  <EntityContainerMapping StorageEntityContainer="DemoRobotModelStoreContainer" CdmEntityContainer="DemoRobotEntities">
     <EntitySetMapping Name="horario">
       <EntityTypeMapping TypeName="DemoRobotModel.horario">
         <MappingFragment StoreEntitySet="horario">
@@ -24,6 +24,7 @@
           <ScalarProperty Name="id_robot" ColumnName="id_robot" />
           <ScalarProperty Name="nombre_robot" ColumnName="nombre_robot" />
           <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="id_servidor" ColumnName="id_servidor" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -37,6 +38,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="sistema_op_x_robot">
+      <EntityTypeMapping TypeName="DemoRobotModel.sistema_op_x_robot">
+        <MappingFragment StoreEntitySet="sistema_op_x_robot">
+          <ScalarProperty Name="id_robotsistema" ColumnName="id_robotsistema" />
+          <ScalarProperty Name="id_robot" ColumnName="id_robot" />
+          <ScalarProperty Name="id_sistema" ColumnName="id_sistema" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="sistema_operacional">
       <EntityTypeMapping TypeName="DemoRobotModel.sistema_operacional">
         <MappingFragment StoreEntitySet="sistema_operacional">
@@ -44,14 +54,6 @@
           <ScalarProperty Name="nombre_sis" ColumnName="nombre_sis" />
           <ScalarProperty Name="version" ColumnName="version" />
           <ScalarProperty Name="credenciales" ColumnName="credenciales" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="sys_robot">
-      <EntityTypeMapping TypeName="DemoRobotModel.sys_robot">
-        <MappingFragment StoreEntitySet="sys_robot">
-          <ScalarProperty Name="id_system" ColumnName="id_system" />
-          <ScalarProperty Name="id_robot" ColumnName="id_robot" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -64,13 +66,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="robot_server" TypeName="DemoRobotModel.robot_server" StoreEntitySet="robot_server">
-      <EndProperty Name="robot">
-        <ScalarProperty Name="id_robot" ColumnName="robot_id_robot" />
-      </EndProperty>
-      <EndProperty Name="servidor">
-        <ScalarProperty Name="id_servidor" ColumnName="server_id_server" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

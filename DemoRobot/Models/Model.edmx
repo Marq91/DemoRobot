@@ -28,14 +28,7 @@
           <Property Name="id_robot" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre_robot" Type="varchar" MaxLength="50" />
           <Property Name="estado" Type="varchar" MaxLength="25" />
-        </EntityType>
-        <EntityType Name="robot_server">
-          <Key>
-            <PropertyRef Name="robot_id_robot" />
-            <PropertyRef Name="server_id_server" />
-          </Key>
-          <Property Name="robot_id_robot" Type="int" Nullable="false" />
-          <Property Name="server_id_server" Type="int" Nullable="false" />
+          <Property Name="id_servidor" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="servidor">
           <Key>
@@ -46,6 +39,14 @@
           <Property Name="ip_servidor" Type="varchar" MaxLength="25" />
           <Property Name="cta_runner" Type="varchar" MaxLength="25" />
         </EntityType>
+        <EntityType Name="sistema_op_x_robot">
+          <Key>
+            <PropertyRef Name="id_robotsistema" />
+          </Key>
+          <Property Name="id_robotsistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_robot" Type="int" Nullable="false" />
+          <Property Name="id_sistema" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="sistema_operacional">
           <Key>
             <PropertyRef Name="id_sistema" />
@@ -55,14 +56,6 @@
           <Property Name="version" Type="varchar" MaxLength="10" />
           <Property Name="credenciales" Type="varchar" MaxLength="10" />
         </EntityType>
-        <EntityType Name="sys_robot">
-          <Key>
-            <PropertyRef Name="id_system" />
-            <PropertyRef Name="id_robot" />
-          </Key>
-          <Property Name="id_system" Type="int" Nullable="false" />
-          <Property Name="id_robot" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="tarea">
           <Key>
             <PropertyRef Name="id_tarea" />
@@ -71,7 +64,7 @@
           <Property Name="nombre_tarea" Type="varchar" MaxLength="50" />
           <Property Name="id_robot" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK_horario_tarea">
+        <Association Name="horario_tarea_fk">
           <End Role="tarea" Type="Self.tarea" Multiplicity="1" />
           <End Role="horario" Type="Self.horario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -83,93 +76,43 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_id_robot">
-          <End Role="robot" Type="Self.robot" Multiplicity="1" />
-          <End Role="tarea" Type="Self.tarea" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="robot">
-              <PropertyRef Name="id_robot" />
-            </Principal>
-            <Dependent Role="tarea">
-              <PropertyRef Name="id_robot" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_id_system">
-          <End Role="sistema_operacional" Type="Self.sistema_operacional" Multiplicity="1" />
-          <End Role="sys_robot" Type="Self.sys_robot" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="sistema_operacional">
-              <PropertyRef Name="id_sistema" />
-            </Principal>
-            <Dependent Role="sys_robot">
-              <PropertyRef Name="id_system" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_sys_robot_sys_robot">
-          <End Role="sys_robot" Type="Self.sys_robot" Multiplicity="1" />
-          <End Role="sys_robot1" Type="Self.sys_robot" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="sys_robot">
-              <PropertyRef Name="id_system" />
-              <PropertyRef Name="id_robot" />
-            </Principal>
-            <Dependent Role="sys_robot1">
-              <PropertyRef Name="id_system" />
-              <PropertyRef Name="id_robot" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="robot_server_robot_fk">
-          <End Role="robot" Type="Self.robot" Multiplicity="1" />
-          <End Role="robot_server" Type="Self.robot_server" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="robot">
-              <PropertyRef Name="id_robot" />
-            </Principal>
-            <Dependent Role="robot_server">
-              <PropertyRef Name="robot_id_robot" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="robot_server_server_fk">
+        <Association Name="robot_servidor_fk">
           <End Role="servidor" Type="Self.servidor" Multiplicity="1" />
-          <End Role="robot_server" Type="Self.robot_server" Multiplicity="*" />
+          <End Role="robot" Type="Self.robot" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="servidor">
               <PropertyRef Name="id_servidor" />
             </Principal>
-            <Dependent Role="robot_server">
-              <PropertyRef Name="server_id_server" />
+            <Dependent Role="robot">
+              <PropertyRef Name="id_servidor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="sys_robot_operational_system_fk">
-          <End Role="sistema_operacional" Type="Self.sistema_operacional" Multiplicity="1" />
-          <End Role="sys_robot" Type="Self.sys_robot" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="sistema_operacional">
-              <PropertyRef Name="id_sistema" />
-            </Principal>
-            <Dependent Role="sys_robot">
-              <PropertyRef Name="id_system" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="sys_robot_robot_fk">
+        <Association Name="sistema_op_x_robot_robot_fk">
           <End Role="robot" Type="Self.robot" Multiplicity="1" />
-          <End Role="sys_robot" Type="Self.sys_robot" Multiplicity="*" />
+          <End Role="sistema_op_x_robot" Type="Self.sistema_op_x_robot" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="robot">
               <PropertyRef Name="id_robot" />
             </Principal>
-            <Dependent Role="sys_robot">
+            <Dependent Role="sistema_op_x_robot">
               <PropertyRef Name="id_robot" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="task_robot_fk">
+        <Association Name="sistema_op_x_robot_sistema_operacional_fk">
+          <End Role="sistema_operacional" Type="Self.sistema_operacional" Multiplicity="1" />
+          <End Role="sistema_op_x_robot" Type="Self.sistema_op_x_robot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sistema_operacional">
+              <PropertyRef Name="id_sistema" />
+            </Principal>
+            <Dependent Role="sistema_op_x_robot">
+              <PropertyRef Name="id_sistema" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tarea_robot_fk">
           <End Role="robot" Type="Self.robot" Multiplicity="1" />
           <End Role="tarea" Type="Self.tarea" Multiplicity="*" />
           <ReferentialConstraint>
@@ -184,44 +127,27 @@
         <EntityContainer Name="DemoRobotModelStoreContainer">
           <EntitySet Name="horario" EntityType="Self.horario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="robot" EntityType="Self.robot" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="robot_server" EntityType="Self.robot_server" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="servidor" EntityType="Self.servidor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sistema_op_x_robot" EntityType="Self.sistema_op_x_robot" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sistema_operacional" EntityType="Self.sistema_operacional" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sys_robot" EntityType="Self.sys_robot" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tarea" EntityType="Self.tarea" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_horario_tarea" Association="Self.FK_horario_tarea">
+          <AssociationSet Name="horario_tarea_fk" Association="Self.horario_tarea_fk">
             <End Role="tarea" EntitySet="tarea" />
             <End Role="horario" EntitySet="horario" />
           </AssociationSet>
-          <AssociationSet Name="FK_id_robot" Association="Self.FK_id_robot">
-            <End Role="robot" EntitySet="robot" />
-            <End Role="tarea" EntitySet="tarea" />
-          </AssociationSet>
-          <AssociationSet Name="FK_id_system" Association="Self.FK_id_system">
-            <End Role="sistema_operacional" EntitySet="sistema_operacional" />
-            <End Role="sys_robot" EntitySet="sys_robot" />
-          </AssociationSet>
-          <AssociationSet Name="FK_sys_robot_sys_robot" Association="Self.FK_sys_robot_sys_robot">
-            <End Role="sys_robot" EntitySet="sys_robot" />
-            <End Role="sys_robot1" EntitySet="sys_robot" />
-          </AssociationSet>
-          <AssociationSet Name="robot_server_robot_fk" Association="Self.robot_server_robot_fk">
-            <End Role="robot" EntitySet="robot" />
-            <End Role="robot_server" EntitySet="robot_server" />
-          </AssociationSet>
-          <AssociationSet Name="robot_server_server_fk" Association="Self.robot_server_server_fk">
+          <AssociationSet Name="robot_servidor_fk" Association="Self.robot_servidor_fk">
             <End Role="servidor" EntitySet="servidor" />
-            <End Role="robot_server" EntitySet="robot_server" />
-          </AssociationSet>
-          <AssociationSet Name="sys_robot_operational_system_fk" Association="Self.sys_robot_operational_system_fk">
-            <End Role="sistema_operacional" EntitySet="sistema_operacional" />
-            <End Role="sys_robot" EntitySet="sys_robot" />
-          </AssociationSet>
-          <AssociationSet Name="sys_robot_robot_fk" Association="Self.sys_robot_robot_fk">
             <End Role="robot" EntitySet="robot" />
-            <End Role="sys_robot" EntitySet="sys_robot" />
           </AssociationSet>
-          <AssociationSet Name="task_robot_fk" Association="Self.task_robot_fk">
+          <AssociationSet Name="sistema_op_x_robot_robot_fk" Association="Self.sistema_op_x_robot_robot_fk">
+            <End Role="robot" EntitySet="robot" />
+            <End Role="sistema_op_x_robot" EntitySet="sistema_op_x_robot" />
+          </AssociationSet>
+          <AssociationSet Name="sistema_op_x_robot_sistema_operacional_fk" Association="Self.sistema_op_x_robot_sistema_operacional_fk">
+            <End Role="sistema_operacional" EntitySet="sistema_operacional" />
+            <End Role="sistema_op_x_robot" EntitySet="sistema_op_x_robot" />
+          </AssociationSet>
+          <AssociationSet Name="tarea_robot_fk" Association="Self.tarea_robot_fk">
             <End Role="robot" EntitySet="robot" />
             <End Role="tarea" EntitySet="tarea" />
           </AssociationSet>
@@ -246,7 +172,7 @@
           <Property Name="s" Type="Boolean" />
           <Property Name="d" Type="Boolean" />
           <Property Name="id_tarea" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tarea" Relationship="Self.FK_horario_tarea" FromRole="horario" ToRole="tarea" />
+          <NavigationProperty Name="tarea" Relationship="Self.horario_tarea_fk" FromRole="horario" ToRole="tarea" />
         </EntityType>
         <EntityType Name="robot">
           <Key>
@@ -255,10 +181,10 @@
           <Property Name="id_robot" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre_robot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tarea" Relationship="Self.FK_id_robot" FromRole="robot" ToRole="tarea" />
-          <NavigationProperty Name="sys_robot" Relationship="Self.sys_robot_robot_fk" FromRole="robot" ToRole="sys_robot" />
-          <NavigationProperty Name="tarea1" Relationship="Self.task_robot_fk" FromRole="robot" ToRole="tarea" />
-          <NavigationProperty Name="servidor" Relationship="Self.robot_server" FromRole="robot" ToRole="servidor" />
+          <Property Name="id_servidor" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="servidor" Relationship="Self.robot_servidor_fk" FromRole="robot" ToRole="servidor" />
+          <NavigationProperty Name="sistema_op_x_robot" Relationship="Self.sistema_op_x_robot_robot_fk" FromRole="robot" ToRole="sistema_op_x_robot" />
+          <NavigationProperty Name="tarea" Relationship="Self.tarea_robot_fk" FromRole="robot" ToRole="tarea" />
         </EntityType>
         <EntityType Name="servidor">
           <Key>
@@ -268,7 +194,17 @@
           <Property Name="nombre_servidor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ip_servidor" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="cta_runner" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="robot" Relationship="Self.robot_server" FromRole="servidor" ToRole="robot" />
+          <NavigationProperty Name="robot" Relationship="Self.robot_servidor_fk" FromRole="servidor" ToRole="robot" />
+        </EntityType>
+        <EntityType Name="sistema_op_x_robot">
+          <Key>
+            <PropertyRef Name="id_robotsistema" />
+          </Key>
+          <Property Name="id_robotsistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_robot" Type="Int32" Nullable="false" />
+          <Property Name="id_sistema" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="robot" Relationship="Self.sistema_op_x_robot_robot_fk" FromRole="sistema_op_x_robot" ToRole="robot" />
+          <NavigationProperty Name="sistema_operacional" Relationship="Self.sistema_op_x_robot_sistema_operacional_fk" FromRole="sistema_op_x_robot" ToRole="sistema_operacional" />
         </EntityType>
         <EntityType Name="sistema_operacional">
           <Key>
@@ -278,21 +214,7 @@
           <Property Name="nombre_sis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="version" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="credenciales" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="sys_robot" Relationship="Self.FK_id_system" FromRole="sistema_operacional" ToRole="sys_robot" />
-          <NavigationProperty Name="sys_robot1" Relationship="Self.sys_robot_operational_system_fk" FromRole="sistema_operacional" ToRole="sys_robot" />
-        </EntityType>
-        <EntityType Name="sys_robot">
-          <Key>
-            <PropertyRef Name="id_system" />
-            <PropertyRef Name="id_robot" />
-          </Key>
-          <Property Name="id_system" Type="Int32" Nullable="false" />
-          <Property Name="id_robot" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="robot" Relationship="Self.sys_robot_robot_fk" FromRole="sys_robot" ToRole="robot" />
-          <NavigationProperty Name="sistema_operacional" Relationship="Self.FK_id_system" FromRole="sys_robot" ToRole="sistema_operacional" />
-          <NavigationProperty Name="sistema_operacional1" Relationship="Self.sys_robot_operational_system_fk" FromRole="sys_robot" ToRole="sistema_operacional" />
-          <NavigationProperty Name="sys_robot1" Relationship="Self.FK_sys_robot_sys_robot" FromRole="sys_robot" ToRole="sys_robot1" />
-          <NavigationProperty Name="sys_robot2" Relationship="Self.FK_sys_robot_sys_robot" FromRole="sys_robot1" ToRole="sys_robot" />
+          <NavigationProperty Name="sistema_op_x_robot" Relationship="Self.sistema_op_x_robot_sistema_operacional_fk" FromRole="sistema_operacional" ToRole="sistema_op_x_robot" />
         </EntityType>
         <EntityType Name="tarea">
           <Key>
@@ -301,11 +223,10 @@
           <Property Name="id_tarea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre_tarea" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="id_robot" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="horario" Relationship="Self.FK_horario_tarea" FromRole="tarea" ToRole="horario" />
-          <NavigationProperty Name="robot" Relationship="Self.FK_id_robot" FromRole="tarea" ToRole="robot" />
-          <NavigationProperty Name="robot1" Relationship="Self.task_robot_fk" FromRole="tarea" ToRole="robot" />
+          <NavigationProperty Name="horario" Relationship="Self.horario_tarea_fk" FromRole="tarea" ToRole="horario" />
+          <NavigationProperty Name="robot" Relationship="Self.tarea_robot_fk" FromRole="tarea" ToRole="robot" />
         </EntityType>
-        <Association Name="FK_horario_tarea">
+        <Association Name="horario_tarea_fk">
           <End Role="tarea" Type="Self.tarea" Multiplicity="1" />
           <End Role="horario" Type="Self.horario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -317,122 +238,80 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_id_robot">
-          <End Role="robot" Type="Self.robot" Multiplicity="1" />
-          <End Role="tarea" Type="Self.tarea" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="robot">
-              <PropertyRef Name="id_robot" />
-            </Principal>
-            <Dependent Role="tarea">
-              <PropertyRef Name="id_robot" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="sys_robot_robot_fk">
-          <End Role="robot" Type="Self.robot" Multiplicity="1" />
-          <End Role="sys_robot" Type="Self.sys_robot" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="robot">
-              <PropertyRef Name="id_robot" />
-            </Principal>
-            <Dependent Role="sys_robot">
-              <PropertyRef Name="id_robot" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="task_robot_fk">
-          <End Role="robot" Type="Self.robot" Multiplicity="1" />
-          <End Role="tarea" Type="Self.tarea" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="robot">
-              <PropertyRef Name="id_robot" />
-            </Principal>
-            <Dependent Role="tarea">
-              <PropertyRef Name="id_robot" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_id_system">
-          <End Role="sistema_operacional" Type="Self.sistema_operacional" Multiplicity="1" />
-          <End Role="sys_robot" Type="Self.sys_robot" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="sistema_operacional">
-              <PropertyRef Name="id_sistema" />
-            </Principal>
-            <Dependent Role="sys_robot">
-              <PropertyRef Name="id_system" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="sys_robot_operational_system_fk">
-          <End Role="sistema_operacional" Type="Self.sistema_operacional" Multiplicity="1" />
-          <End Role="sys_robot" Type="Self.sys_robot" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="sistema_operacional">
-              <PropertyRef Name="id_sistema" />
-            </Principal>
-            <Dependent Role="sys_robot">
-              <PropertyRef Name="id_system" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_sys_robot_sys_robot">
-          <End Role="sys_robot" Type="Self.sys_robot" Multiplicity="1" />
-          <End Role="sys_robot1" Type="Self.sys_robot" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="sys_robot">
-              <PropertyRef Name="id_system" />
-              <PropertyRef Name="id_robot" />
-            </Principal>
-            <Dependent Role="sys_robot1">
-              <PropertyRef Name="id_system" />
-              <PropertyRef Name="id_robot" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="robot_server">
+        <Association Name="robot_servidor_fk">
+          <End Role="servidor" Type="Self.servidor" Multiplicity="1" />
           <End Role="robot" Type="Self.robot" Multiplicity="*" />
-          <End Role="servidor" Type="Self.servidor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="servidor">
+              <PropertyRef Name="id_servidor" />
+            </Principal>
+            <Dependent Role="robot">
+              <PropertyRef Name="id_servidor" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DemoRobotEntities1" annotation:LazyLoadingEnabled="true">
+        <Association Name="sistema_op_x_robot_robot_fk">
+          <End Role="robot" Type="Self.robot" Multiplicity="1" />
+          <End Role="sistema_op_x_robot" Type="Self.sistema_op_x_robot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="robot">
+              <PropertyRef Name="id_robot" />
+            </Principal>
+            <Dependent Role="sistema_op_x_robot">
+              <PropertyRef Name="id_robot" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tarea_robot_fk">
+          <End Role="robot" Type="Self.robot" Multiplicity="1" />
+          <End Role="tarea" Type="Self.tarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="robot">
+              <PropertyRef Name="id_robot" />
+            </Principal>
+            <Dependent Role="tarea">
+              <PropertyRef Name="id_robot" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="sistema_op_x_robot_sistema_operacional_fk">
+          <End Role="sistema_operacional" Type="Self.sistema_operacional" Multiplicity="1" />
+          <End Role="sistema_op_x_robot" Type="Self.sistema_op_x_robot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sistema_operacional">
+              <PropertyRef Name="id_sistema" />
+            </Principal>
+            <Dependent Role="sistema_op_x_robot">
+              <PropertyRef Name="id_sistema" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DemoRobotEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="horario" EntityType="Self.horario" />
           <EntitySet Name="robot" EntityType="Self.robot" />
           <EntitySet Name="servidor" EntityType="Self.servidor" />
+          <EntitySet Name="sistema_op_x_robot" EntityType="Self.sistema_op_x_robot" />
           <EntitySet Name="sistema_operacional" EntityType="Self.sistema_operacional" />
-          <EntitySet Name="sys_robot" EntityType="Self.sys_robot" />
           <EntitySet Name="tarea" EntityType="Self.tarea" />
-          <AssociationSet Name="FK_horario_tarea" Association="Self.FK_horario_tarea">
+          <AssociationSet Name="horario_tarea_fk" Association="Self.horario_tarea_fk">
             <End Role="tarea" EntitySet="tarea" />
             <End Role="horario" EntitySet="horario" />
           </AssociationSet>
-          <AssociationSet Name="FK_id_robot" Association="Self.FK_id_robot">
-            <End Role="robot" EntitySet="robot" />
-            <End Role="tarea" EntitySet="tarea" />
-          </AssociationSet>
-          <AssociationSet Name="sys_robot_robot_fk" Association="Self.sys_robot_robot_fk">
-            <End Role="robot" EntitySet="robot" />
-            <End Role="sys_robot" EntitySet="sys_robot" />
-          </AssociationSet>
-          <AssociationSet Name="task_robot_fk" Association="Self.task_robot_fk">
-            <End Role="robot" EntitySet="robot" />
-            <End Role="tarea" EntitySet="tarea" />
-          </AssociationSet>
-          <AssociationSet Name="FK_id_system" Association="Self.FK_id_system">
-            <End Role="sistema_operacional" EntitySet="sistema_operacional" />
-            <End Role="sys_robot" EntitySet="sys_robot" />
-          </AssociationSet>
-          <AssociationSet Name="sys_robot_operational_system_fk" Association="Self.sys_robot_operational_system_fk">
-            <End Role="sistema_operacional" EntitySet="sistema_operacional" />
-            <End Role="sys_robot" EntitySet="sys_robot" />
-          </AssociationSet>
-          <AssociationSet Name="FK_sys_robot_sys_robot" Association="Self.FK_sys_robot_sys_robot">
-            <End Role="sys_robot" EntitySet="sys_robot" />
-            <End Role="sys_robot1" EntitySet="sys_robot" />
-          </AssociationSet>
-          <AssociationSet Name="robot_server" Association="Self.robot_server">
-            <End Role="robot" EntitySet="robot" />
+          <AssociationSet Name="robot_servidor_fk" Association="Self.robot_servidor_fk">
             <End Role="servidor" EntitySet="servidor" />
+            <End Role="robot" EntitySet="robot" />
+          </AssociationSet>
+          <AssociationSet Name="sistema_op_x_robot_robot_fk" Association="Self.sistema_op_x_robot_robot_fk">
+            <End Role="robot" EntitySet="robot" />
+            <End Role="sistema_op_x_robot" EntitySet="sistema_op_x_robot" />
+          </AssociationSet>
+          <AssociationSet Name="tarea_robot_fk" Association="Self.tarea_robot_fk">
+            <End Role="robot" EntitySet="robot" />
+            <End Role="tarea" EntitySet="tarea" />
+          </AssociationSet>
+          <AssociationSet Name="sistema_op_x_robot_sistema_operacional_fk" Association="Self.sistema_op_x_robot_sistema_operacional_fk">
+            <End Role="sistema_operacional" EntitySet="sistema_operacional" />
+            <End Role="sistema_op_x_robot" EntitySet="sistema_op_x_robot" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -440,7 +319,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DemoRobotModelStoreContainer" CdmEntityContainer="DemoRobotEntities1">
+        <EntityContainerMapping StorageEntityContainer="DemoRobotModelStoreContainer" CdmEntityContainer="DemoRobotEntities">
           <EntitySetMapping Name="horario">
             <EntityTypeMapping TypeName="DemoRobotModel.horario">
               <MappingFragment StoreEntitySet="horario">
@@ -464,6 +343,7 @@
                 <ScalarProperty Name="id_robot" ColumnName="id_robot" />
                 <ScalarProperty Name="nombre_robot" ColumnName="nombre_robot" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="id_servidor" ColumnName="id_servidor" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -477,6 +357,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sistema_op_x_robot">
+            <EntityTypeMapping TypeName="DemoRobotModel.sistema_op_x_robot">
+              <MappingFragment StoreEntitySet="sistema_op_x_robot">
+                <ScalarProperty Name="id_robotsistema" ColumnName="id_robotsistema" />
+                <ScalarProperty Name="id_robot" ColumnName="id_robot" />
+                <ScalarProperty Name="id_sistema" ColumnName="id_sistema" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="sistema_operacional">
             <EntityTypeMapping TypeName="DemoRobotModel.sistema_operacional">
               <MappingFragment StoreEntitySet="sistema_operacional">
@@ -484,14 +373,6 @@
                 <ScalarProperty Name="nombre_sis" ColumnName="nombre_sis" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="credenciales" ColumnName="credenciales" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sys_robot">
-            <EntityTypeMapping TypeName="DemoRobotModel.sys_robot">
-              <MappingFragment StoreEntitySet="sys_robot">
-                <ScalarProperty Name="id_system" ColumnName="id_system" />
-                <ScalarProperty Name="id_robot" ColumnName="id_robot" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -504,14 +385,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="robot_server" TypeName="DemoRobotModel.robot_server" StoreEntitySet="robot_server">
-            <EndProperty Name="robot">
-              <ScalarProperty Name="id_robot" ColumnName="robot_id_robot" />
-            </EndProperty>
-            <EndProperty Name="servidor">
-              <ScalarProperty Name="id_servidor" ColumnName="server_id_server" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

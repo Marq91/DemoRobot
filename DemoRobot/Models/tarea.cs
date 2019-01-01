@@ -27,6 +27,5 @@ namespace DemoRobot.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<horario> horario { get; set; }
         public virtual robot robot { get; set; }
-        public virtual robot robot1 { get; set; }
     }
 }

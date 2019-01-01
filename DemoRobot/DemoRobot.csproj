@@ -134,11 +134,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\EstadoController.cs" />
-    <Compile Include="Controllers\FormularioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HorarioController.cs" />
     <Compile Include="Controllers\RobotController.cs" />
+    <Compile Include="Controllers\ServidorController.cs" />
+    <Compile Include="Controllers\Sis_operacionalController.cs" />
     <Compile Include="Controllers\TareaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -171,7 +171,7 @@
     <Compile Include="Models\sistema_operacional.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sys_robot.cs">
+    <Compile Include="Models\sistema_op_x_robot.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tarea.cs">
@@ -240,22 +240,27 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Formulario\Create.cshtml" />
-    <Content Include="Views\Estado\Index.cshtml" />
-    <Content Include="Views\Formulario\Index.cshtml" />
-    <Content Include="Views\Robot\Index.cshtml" />
-    <Content Include="Views\Robot\Create.cshtml" />
-    <Content Include="Views\Robot\Delete.cshtml" />
     <Content Include="Views\Robot\Edit.cshtml" />
     <Content Include="Views\Robot\Details.cshtml" />
     <Content Include="Views\Tarea\Index.cshtml" />
     <Content Include="Views\Tarea\Create.cshtml" />
     <Content Include="Views\Tarea\Edit.cshtml" />
-    <Content Include="Views\Tarea\Delete.cshtml" />
     <Content Include="Views\Horario\Index.cshtml" />
     <Content Include="Views\Horario\Create.cshtml" />
     <Content Include="Views\Horario\Details.cshtml" />
     <Content Include="Views\Horario\Delete.cshtml" />
+    <Content Include="Views\Tarea\Delete.cshtml" />
+    <Content Include="Views\Servidor\Index.cshtml" />
+    <Content Include="Views\Servidor\Create.cshtml" />
+    <Content Include="Views\Servidor\Delete.cshtml" />
+    <Content Include="Views\Sis_operacional\Index.cshtml" />
+    <Content Include="Views\Sis_operacional\Create.cshtml" />
+    <Content Include="Views\Servidor\Edit.cshtml" />
+    <Content Include="Views\Sis_operacional\Edit.cshtml" />
+    <Content Include="Views\Sis_operacional\Delete.cshtml" />
+    <Content Include="Views\Robot\Index.cshtml" />
+    <Content Include="Views\Robot\Create.cshtml" />
+    <Content Include="Views\Robot\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

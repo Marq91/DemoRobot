@@ -1,11 +1,5 @@
 ﻿@model DemoRobot.Models.robot
 
-@{
-    ViewBag.Title = "Create";
-}
-
-<h2>Create</h2>
-
 
 @using (Html.BeginForm()) 
 {
@@ -16,8 +10,7 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            <label class="control-label col-md-2">Nombre del Robot</label>
-           
+            @Html.LabelFor(model => model.nombre_robot, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.nombre_robot, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.nombre_robot, "", new { @class = "text-danger" })
@@ -25,8 +18,7 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2">Estado</label>
-            
+            @Html.LabelFor(model => model.estado, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.estado, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
@@ -34,8 +26,17 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.id_servidor, "id_servidor", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.DropDownList("id_servidor", null, htmlAttributes: new { @class = "form-control" })*@
+                @Html.DropDownList("id_servidor", (IEnumerable<SelectListItem>)ViewBag.nombre_servidor, "Seleccione", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.id_servidor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Continuar" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>

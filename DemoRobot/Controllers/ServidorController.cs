@@ -9,87 +9,70 @@ using DemoRobot.Models;
 
 namespace DemoRobot.Controllers
 {
-    public class RobotController : Controller
+    public class ServidorController : Controller
     {
         private DemoRobotEntities db = new DemoRobotEntities();
 
-        // GET: Robot
+        // GET: Servidor
         public ActionResult Index()
         {
-
-            return View(db.robot.ToList());
+            return View(db.servidor.ToList());
         }
 
-        // GET: Robot/Details/5
-        public ActionResult Details(int? id)
+        // GET: Servidor/Details/5
+        public ActionResult Details(int id)
         {
-            if(id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            else
-            {
-                robot rob = db.robot.Find(id);
-                if (rob == null)
-                {
-                    return HttpNotFound();
-                }
-                else
-                {
-                    return View(rob);
-                }
-            }
+            return View();
         }
 
-        //Lista Robots
-        public List<robot> ObtenerRobot()
+        public List<servidor> ObtenerServidor()
         {
-            var ro = new robot();
+            var ser = new servidor();
             {
-                ro.id_robot.ToString();
-                ro.nombre_robot.ToString();
-                ro.estado.ToString();
+                ser.id_servidor.ToString();
+                ser.nombre_servidor.ToString();
+                ser.ip_servidor.ToString();
+                ser.cta_runner.ToString();
             };
 
-            return new List<robot> { ro };
+            return new List<servidor> { ser };
         }
 
-
-        // GET: Robot/Create
+        // GET: Servidor/Create
         public ActionResult Create()
         {
-            var sCombo = db.servidor
-                            .OrderBy(c => (c.nombre_servidor))
+            
+            var sCombo = db.robot
+                            .OrderBy(c => c.nombre_robot)
                             .ToList();
 
-            ViewBag.nombre_servidor = new SelectList(sCombo, "id_servidor", "nombre_servidor");
+            ViewBag.nombre_robot = new SelectList(sCombo, "id_robot", "nombre_robot");
 
             return View();
         }
 
-        // POST: Robot/Create
+        // POST: Servidor/Create
         [HttpPost]
-        public ActionResult Create(robot rob)
+        public ActionResult Create(servidor ser)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    db.robot.Add(rob);
+                    db.servidor.Add(ser);
                     db.SaveChanges();
-                    return RedirectToRoute("Tarea");
-                    //return RedirectToAction("Create");
+                    return RedirectToAction("Index");
                 }
-                return View(rob);
-                
+
+                return View(ser);
             }
             catch
             {
-                return View(rob);
+                return View(ser);
             }
         }
 
-        // GET: Robot/Edit/5
+        // GET: Servidor/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -98,7 +81,7 @@ namespace DemoRobot.Controllers
             }
             else
             {
-                robot x = db.robot.Find(id);
+                servidor x = db.servidor.Find(id);
                 if (x == null)
                 {
                     return HttpNotFound();
@@ -110,50 +93,64 @@ namespace DemoRobot.Controllers
             }
         }
 
-        // POST: Robot/Edit/5
+        // POST: Servidor/Edit/5
         [HttpPost]
-        public ActionResult Edit(robot rob)
+        public ActionResult Edit(servidor ser)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    db.Entry(rob).State = EntityState.Modified;
+                    db.Entry(ser).State = EntityState.Modified;
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
-                return View(rob);
+                return View(ser);
             }
             catch
             {
-                return View(rob);
+                return View(ser);
             }
         }
 
-        // GET: Robot/Delete/5
-        public ActionResult Delete(int id)
+        // GET: Servidor/Delete/5
+        public ActionResult Delete(int? id)
         {
-            robot rob = db.robot.SingleOrDefault(c => c.id_robot == id);
-            return View(rob);
-            
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            else
+            {
+                servidor X = db.servidor.Find(id);
+                if (X == null)
+                {
+                    return HttpNotFound();
+                }
+                else
+                {
+                    return View(X);
+                }
+
+            }
         }
 
-        // POST: Robot/Delete/5
+        // POST: Servidor/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, robot model)
+        public ActionResult Delete(int id, servidor model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    model = db.robot.Find(id);
+                    model = db.servidor.Find(id);
                     if (model == null)
                     {
                         return HttpNotFound();
                     }
                     else
                     {
-                        db.robot.Remove(model);
+                        db.servidor.Remove(model);
                         db.SaveChanges();
                     }
 
@@ -167,7 +164,5 @@ namespace DemoRobot.Controllers
                 return View(model);
             }
         }
-
-
     }
 }

@@ -17,8 +17,7 @@ namespace DemoRobot.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public sistema_operacional()
         {
-            this.sys_robot = new HashSet<sys_robot>();
-            this.sys_robot1 = new HashSet<sys_robot>();
+            this.sistema_op_x_robot = new HashSet<sistema_op_x_robot>();
         }
     
         public int id_sistema { get; set; }
@@ -27,8 +26,6 @@ namespace DemoRobot.Models
         public string credenciales { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<sys_robot> sys_robot { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<sys_robot> sys_robot1 { get; set; }
+        public virtual ICollection<sistema_op_x_robot> sistema_op_x_robot { get; set; }
     }
 }
